@@ -4,6 +4,7 @@
 <?php  include_once ( __DIR__. '/../template/barra.php') ;?>
 
 
+
 <div class="app">
     <nav class="tabs">
         <button class="actual" type="button" data-paso='1'>Servicios</button>

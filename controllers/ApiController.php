@@ -11,8 +11,7 @@ class ApiController
     public static function index()
     {
         session_start();
-        debuguear($_SESSION);
-        isAdmin();
+        isAuth();
         $servicios = Servicio::all();
         echo json_encode($servicios);
     }
