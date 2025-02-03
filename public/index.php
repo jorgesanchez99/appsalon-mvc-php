@@ -28,7 +28,7 @@ $router -> post('/crear-cuenta', [LoginController::class, 'crear']);
 
 //* Area Privada
 $router -> get('/cita', [CitaController::class, 'index']);
-$router ->get('/admin',[AdminController::class, 'index']);
+$router ->get('/dashboard',[AdminController::class, 'index']);
 
 //*Confirmar Cuenta
 $router -> get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
