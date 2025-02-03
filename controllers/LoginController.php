@@ -11,6 +11,14 @@ class LoginController
     public static function login(Router $router)
     {
         $alertas = [];
+        session_start();
+        if(isset($_SESSION['login'])) {
+            if(isset($_SESSION['admin'])) {
+                header('Location: /admin');
+            }else{
+                header('Location: /cita');
+            }
+        }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $auth = new Usuario($_POST);
