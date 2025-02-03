@@ -10,6 +10,15 @@ class LoginController
 {
     public static function login(Router $router)
     {
+        session_start();
+        if(isset($_SESSION['login'])) {
+            if($_SESSION['admin'] === '1') {
+                header('Location: /dashboard');
+            }else{
+                header('Location: /cita');
+            }
+        }
+
         $alertas = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,7 +41,7 @@ class LoginController
                         //* Redireccionar
                         if($usuario->admin === '1') {
                             $_SESSION['admin'] = $usuario->admin ?? null;
-                            header('Location: /admin');
+                            header('Location: /dashboard');
                         }else{
                             header('Location: /cita');
                         }
